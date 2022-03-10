@@ -7,7 +7,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   //have to define the list widget. by defult is was dynamic.
-  List<Widget> scoreMark = const [
+  List<Icon> scoreMark = [
     Icon(
       Icons.check,
       color: Colors.green,
@@ -63,7 +63,13 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(15.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(primary: Colors.green),
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    scoreMark.add(
+                      Icon(Icons.check, color: Colors.green),
+                    );
+                  });
+                },
                 child: const Text(
                   'True',
                   style: TextStyle(color: Colors.white, fontSize: 20),
