@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,6 +35,11 @@ class _HomePageState extends State<HomePage> {
       color: Colors.red,
     ),
   ];
+  List<String> questions = [
+    'You can lead a cow down stairs but not up stairs.',
+    'Approximately one quarter of human bones are in the feet.',
+    'A slug\'s blood is green.',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +49,13 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Expanded(
+          Expanded(
             flex: 5,
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  'This is where the question text will go.',
+                  questions[0],
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -66,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   setState(() {
                     scoreMark.add(
-                      Icon(Icons.check, color: Colors.green),
+                      const Icon(Icons.check, color: Colors.green),
                     );
                   });
                 },
@@ -98,9 +105,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-/*
-question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
-question3: 'A slug\'s blood is green.', true,
-*/
