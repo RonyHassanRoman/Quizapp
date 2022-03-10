@@ -1,7 +1,38 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  //have to define the list widget. by defult is was dynamic.
+  List<Widget> scoreMark = const [
+    Icon(
+      Icons.check,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+    Icon(
+      Icons.check,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+    Icon(
+      Icons.check,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -54,32 +85,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Row(
-            children: const [
-              Icon(
-                Icons.check,
-                color: Colors.green,
-              ),
-              Icon(
-                Icons.close,
-                color: Colors.red,
-              ),
-              Icon(
-                Icons.check,
-                color: Colors.green,
-              ),
-              Icon(
-                Icons.close,
-                color: Colors.red,
-              ),
-              Icon(
-                Icons.check,
-                color: Colors.green,
-              ),
-              Icon(
-                Icons.close,
-                color: Colors.red,
-              ),
-            ],
+            children: scoreMark,
           ),
         ],
       ),
