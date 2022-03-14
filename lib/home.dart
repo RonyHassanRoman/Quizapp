@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
     'A slug\'s blood is green.',
   ];
   int questionNumber = 0;
+  List<bool> answer = [true, false, true];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,12 +51,12 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             flex: 5,
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
                   questions[questionNumber],
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 25.0,
                     color: Colors.white,
                   ),
@@ -69,6 +70,8 @@ class _HomePageState extends State<HomePage> {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(primary: Colors.green),
                 onPressed: () {
+                  bool correctAnswer = answer[questionNumber];
+                 
                   setState(() {
                     // scoreMark.add(
                     //   const Icon(Icons.check, color: Colors.green),
