@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     'Approximately one quarter of human bones are in the feet.',
     'A slug\'s blood is green.',
   ];
-
+  int questionNumber = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  questions[0],
+                  questions[questionNumber],
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -70,10 +70,11 @@ class _HomePageState extends State<HomePage> {
                 style: ElevatedButton.styleFrom(primary: Colors.green),
                 onPressed: () {
                   setState(() {
-                    scoreMark.add(
-                      const Icon(Icons.check, color: Colors.green),
-                    );
-                  });
+                    // scoreMark.add(
+                    //   const Icon(Icons.check, color: Colors.green),
+                    // questionNumber = questionNumber + 1;
+                    questionNumber++;
+                  }); //I did it...
                 },
                 child: const Text(
                   'True',
